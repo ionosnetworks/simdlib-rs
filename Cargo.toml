@@ -1,0 +1,35 @@
+[package]
+name = "simdlib"
+version = "0.1.0"
+authors = ["Nimi Wariboko Jr. <nimi.wariboko@livereachmedia.com>"]
+repository = "https://github.com/ionosnetworks/simdlib-rs"
+readme = "README.md"
+license = "MIT"
+description = "Rust wrapper for Simd Library"
+keywords = ["simdlib", "ermig1979"]
+categories = ["api-bindings"]
+edition = "2021"
+exclude = ["Cargo.lock"]
+
+[workspace]
+members = ["simdlib-sys"]
+
+[dependencies]
+simdlib-sys = { path = "simdlib-sys", version = "4.10.114", default-features = false }
+
+# These features are re-exports of the features that the simdlib-sys crate
+# provides. See the simdlib-sys documentation for details.
+[features]
+default = ["avx512", "avx512vnni", "test", "info", "get_version", "synet"]
+avx512 = ["simdlib-sys/avx512"]
+avx512vnni = ["simdlib-sys/avx512vnni"]
+avx512bf16 = ["simdlib-sys/avx512bf16"]
+amx = ["simdlib-sys/amx"]
+test = ["simdlib-sys/test"]
+info = ["simdlib-sys/info"]
+perf = ["simdlib-sys/perf"]
+shared = ["simdlib-sys/shared"]
+get_version = ["simdlib-sys/get_version"]
+synet = ["simdlib-sys/synet"]
+sint8_debug = ["simdlib-sys/sint8_debug"]
+hide = ["simdlib-sys/hide"]

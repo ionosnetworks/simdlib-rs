@@ -1,0 +1,3 @@
+[submodule "simdlib-sys/Simd"]
+	path = simdlib-sys/Simd
+	url = https://github.com/ermig1979/Simd.git

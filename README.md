@@ -1,1 +1,1 @@
-# simdlibrary-rs
+# simdlib-rs

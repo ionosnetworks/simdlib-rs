@@ -1,0 +1,36 @@
+[package]
+name = "simdlib-sys"
+version = "4.10.114"
+authors = ["Nimi Wariboko Jr. <nimi.wariboko@livereachmedia.com>"]
+build = "build.rs"
+links = "simdlib"
+repository = "https://github.com/ionosnetworks/simdlib-rs"
+license = "MIT"
+description = "Native bindings to the SimdLib"
+keywords = ["simdlib", "ermig1979"]
+categories = ["external-ffi-bindings"]
+edition = "2021"
+
+[dependencies]
+
+[build-dependencies]
+cmake = { version = "0.1" }
+
+[lib]
+name = "simdlib_sys"
+path = "src/lib.rs"
+
+[features]
+default = ["avx512", "avx512vnni", "test", "info", "get_version", "synet"]
+avx512 = []
+avx512vnni = []
+avx512bf16 = []
+amx = []
+test = []
+info = []
+perf = []
+shared = []
+get_version = []
+synet = []
+sint8_debug = []
+hide = []
